@@ -1,0 +1,6 @@
+.strict-impress-parent .its-impress-son {
+	display: none;
+}
+.strict-impress-parent.impress-not-supported .its-impress-son {
+	display: block;
+}
