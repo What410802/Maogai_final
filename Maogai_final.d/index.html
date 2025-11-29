@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 	<head>
-		<meta charset="utf-8"/>
+		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<title>My first presentation</title>
 		<link rel="stylesheet" href="../css/impress-common.css"/>
 		<link rel="stylesheet" href="../css/utility.css"/>
-		<script src="../libs/plotly.js-3.3.0/dist/plotly.min.js"></script>
+		<script src="../libs/d3.v7/d3.v7.js"></script>
+		<script src="../libs/plotly.js-3.3.0/plotly.js"></script>
 	</head>
 	<body class="strict-impress-parent impress-not-supported">
 		<div class="its-impress-son">
@@ -54,10 +55,10 @@
 			<div class="step" data-z="19200">
 				<div id="popu"></div>
 				<script>
-					Plotly.d3.csv('data/gapminderDataFiveYear.csv', function (err, data) {
+					d3.csv('data/gapminderDataFiveYear.csv').then(function (data) {
 						// Create a lookup table to sort and regroup the columns of data,
 						// first by year, then by continent:
-						var lookup = {};
+						let lookup = {};
 						function getData(year, continent) {
 							var byYear, trace;
 							if (!(byYear = lookup[year])) {
@@ -78,8 +79,8 @@
 						}
 
 						// Go through each row, get the right trace, and append the data:
-						for (var i = 0; i < data.length; i++) {
-							var datum = data[i];
+						for (const datum of data) {
+							// let datum = data[i];
 							var trace = getData(datum.year, datum.continent);
 							trace.text.push(datum.country);
 							trace.id.push(datum.country);
@@ -89,75 +90,70 @@
 						}
 
 						// Get the group names:
-						var years = Object.keys(lookup);
+						const years = Object.keys(lookup);
 						// In this case, every year includes every continent, so we
 						// can just infer the continents from the *first* year:
-						var firstYear = lookup[years[0]];
-						var continents = Object.keys(firstYear);
+						const firstYear = lookup[years[0]];
+						const continents = Object.keys(firstYear);
 
 						// Create the main traces, one for each continent:
-						var traces = [];
-						for (var i = 0; i < continents.length; i++) {
-							var data = firstYear[continents[i]];
-						// One small note. We're creating a single trace here, to which
-						// the frames will pass data for the different years. It's
-						// subtle, but to avoid data reference problems, we'll slice 
-						// the arrays to ensure we never write any new data into our
-						// lookup table:
-							traces.push({
-							name: continents[i],
-							x: data.x.slice(),
-							y: data.y.slice(),
-							id: data.id.slice(),
-							text: data.text.slice(),
-							mode: 'markers',
-							marker: {
-								size: data.marker.size.slice(),
-								sizemode: 'area',
-								sizeref: 200000
-							}
-							});
-						}
+						const traces = continents.map(continent => {
+							const data = firstYear[continent];
+							// One small note. We're creating a single trace here, to which
+							// the frames will pass data for the different years. It's
+							// subtle, but to avoid data reference problems, we'll slice 
+							// the arrays to ensure we never write any new data into our
+							// lookup table:
+							return {
+								name: continent,
+								x: data.x.slice(),
+								y: data.y.slice(),
+								id: data.id.slice(),
+								text: data.text.slice(),
+								mode: 'markers',
+								marker: {
+									size: data.marker.size.slice(),
+									sizemode: 'area',
+									sizeref: 200000
+								}
+							};
+						});
 
 						// Create a frame for each year. Frames are effectively just
 						// traces, except they don't need to contain the *full* trace
 						// definition (for example, appearance). The frames just need
 						// the parts the traces that change (here, the data).
-						var frames = [];
-						for (var i = 0; i < years.length; i++) {
-							frames.push({
-							name: years[i],
-							data: continents.map(function (continent) {
-								return getData(years[i], continent);
-							})
-							})
-						}
+						const frames = years.map(year => ({
+							name: year,
+							data: continents.map(continent => getData(year, continent))
+						}));
 						
 						// Now create slider steps, one for each frame. The slider
 						// executes a plotly.js API command (here, Plotly.animate).
 						// In this example, we'll animate to one of the named frames
 						// created in the above loop.
-						var sliderSteps = [];
-						for (var i = 0; i < years.length; i++) {
-							sliderSteps.push({
+						const sliderSteps = years.map(year => ({
 							method: 'animate',
-							label: years[i],
-							args: [[years[i]], {
+							label: year,
+							args: [[year], {
 								mode: 'immediate',
 								transition: {duration: 300},
 								frame: {duration: 300, redraw: false},
 							}]
-							});
-						}
+						}));
 						
-						var layout = {
+						const layout = {
 							xaxis: {
-							title: 'Life Expectancy',
-							range: [30, 85]
+								title: {
+									text: 'Life Expectancy'
+								},
+								range: [30, 85]
 							},
 							yaxis: {
-							title: 'GDP per Capita',
-							type: 'log'
+								title: {
+									text: 'GDP per Capita'
+								},
+								type: 'log'
 							},
 							hovermode: 'closest',
 							// We'll use updatemenus (whose functionality includes menus as
@@ -168,55 +164,61 @@
 							// currently running animations with a new list of frames. Here
 							// The new list of frames is empty, so it halts the animation.
 							updatemenus: [{
-							x: 0,
-							y: 0,
-							yanchor: 'top',
-							xanchor: 'left',
-							showactive: false,
-							direction: 'left',
-							type: 'buttons',
-							pad: {t: 87, r: 10},
-							buttons: [{
-								method: 'animate',
-								args: [null, {
-								mode: 'immediate',
-								fromcurrent: true,
-								transition: {duration: 300},
-								frame: {duration: 500, redraw: false}
-								}],
-								label: 'Play'
-							}, {
-								method: 'animate',
-								args: [[null], {
-								mode: 'immediate',
-								transition: {duration: 0},
-								frame: {duration: 0, redraw: false}
-								}],
-								label: 'Pause'
-							}]
+								x: 0,
+								y: 0,
+								yanchor: 'top',
+								xanchor: 'left',
+								showactive: false,
+								direction: 'left',
+								type: 'buttons',
+								pad: {t: 87, r: 10},
+								buttons: [
+									{
+										method: 'animate',
+										args: [null, {
+										mode: 'immediate',
+										fromcurrent: true,
+										transition: {duration: 300},
+										frame: {duration: 500, redraw: false}
+										}],
+										label: 'Play'
+									},
+									{
+										method: 'animate',
+										args: [[null], {
+										mode: 'immediate',
+										transition: {duration: 0},
+										frame: {duration: 0, redraw: false}
+										}],
+										label: 'Pause'
+									}
+								]
 							}],
 							// Finally, add the slider and use `pad` to position it
 							// nicely next to the buttons.
 							sliders: [{
-							pad: {l: 130, t: 55},
-							currentvalue: {
-								visible: true,
-								prefix: 'Year:',
-								xanchor: 'right',
-								font: {size: 20, color: '#666'}
-							},
-							steps: sliderSteps
+								pad: {l: 130, t: 55},
+								currentvalue: {
+									visible: true,
+									prefix: 'Year:',
+									xanchor: 'right',
+									font: {size: 20, color: '#666'}
+								},
+								steps: sliderSteps
 							}]
 						};
 						
 						// Create the plot:
-						Plotly.plot('popu', {
+						Plotly.newPlot('popu', {
 							data: traces,
 							layout: layout,
-						config: {showSendToCloud:true},
+							// config: {showSendToCloud:true},
 							frames: frames,
+						}).catch(function (err) {
+							console.log(err);
 						});
 					});
+					console.log(`Loaded figure "popu"`);
 				</script>
 			</div>
 
