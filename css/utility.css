@@ -4,3 +4,20 @@
 .strict-impress-parent.impress-not-supported .its-impress-son {
 	display: block;
 }
+@font-face {
+	font-family: 'Noto Serif CJK SC';
+	src: url('../libs/fonts/NotoSerifCJK-VF.otf.woff2') format('woff2-variations');
+	font-weight: 400 700;
+	font-style: normal;
+}
+
+#content-page ol li.toc-active {
+	/* border: 3px solid ; */
+	/* background-color: #A09BC3; */
+	color: #D48E7E;
+	font-size: larger;
+	text-decoration: underline;
+}
+div.step {
+	width: max-content;
+}

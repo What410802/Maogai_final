@@ -3,56 +3,53 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<title>My first presentation</title>
+		<title>毛概第三组汇报</title>
 		<link rel="stylesheet" href="../css/impress-common.css"/>
+		<link rel="stylesheet" href="../libs/csshake/csshake.css"/>
 		<link rel="stylesheet" href="../css/utility.css"/>
 		<script src="../libs/d3.v7/d3.v7.js"></script>
 		<script src="../libs/plotly.js-3.3.0/plotly.js"></script>
 	</head>
-	<body class="strict-impress-parent impress-not-supported">
+	<body class="strict-impress-parent impress-not-supported" style="font-family: 'Noto Serif CJK SC'; ">
 		<div class="its-impress-son">
 			<p>This browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
 		</div>
+		<div id="impress" data-width="1920" data-height="1080" data-transition-duration="750" style="font-size: xx-large;">
 
-		<div id="impress" data-width="1920" data-height="1080">
-			<div class="step slide" data-x="-1920" data-y="0" style="background: LightBlue;">
-				<h1>My first Slide</h1>
+			<div class="step beg-step" data-x="0" data-y="0" style="
+				width: 1920px; height: 1080px;
+				background: linear-gradient(rgb(255, 220, 197), white);
+				display: flex; align-items: center; justify-content: center;
+			">
+				<div style="text-align: center; scale: 1;">
+					<hgroup>
+						<h1>《中国的奇迹》阅读汇报</h1>
+						<h3 style="text-align: right;">——跨世纪的腾飞之路</h3>
+					</hgroup>
+					<p>小组成员：成员一、成员二、……<br>
+					主讲人：主讲人 abcd</p>
+				</div>
 			</div>
 
-			<div class="step slide" data-x="0" data-y="1080" style="background: blue;">
-				<div id="graph"></div>
-				<button onclick="javascript:randomize();" style="
-					position: absolute;
-					top: 10px;
-					left: 10px;
-					z-index: 1;
-				">Randomize!</button>
-				<script>
-					Plotly.newPlot('graph', [{
-					x: [1, 2, 3],
-					y: [0, 0.5, 1],
-					line: {simplify: false},
-					}], {}, {showSendToCloud:true});
-
-					function randomize() {
-					Plotly.animate('graph', {
-						data: [{y: [Math.random(), Math.random(), Math.random()]}],
-						traces: [0],
-						layout: {}
-					}, {
-						transition: {
-						duration: 500,
-						easing: 'cubic-in-out'
-						},
-						frame: {
-						duration: 500
-						}
-					})
-					}
-				</script>
+			<div class="step" data-rel-y="-1080">
+				<figure>
+					<img src="images/tongma.jpg"/>
+					<figcaption style="text-align: center;">图1&#x3000;铜马</figcaption>
+				</figure>
 			</div>
 
-			<div class="step" data-z="19200">
+			<div id="content-page" class="step" data-x="1920" data-y="0" data-z="0" style="width: max-content;">
+				<h1>主要内容</h1>
+				<ol start="0">
+					<li id="content-it0">总述</li>
+					<li id="content-it1">改革号角</li>
+					<li id="content-it2">改革洪流</li>
+					<li id="content-it3">辉煌成就</li>
+				</ol>
+			</div>
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" data-transition-duration="0" mygo="content-it0"></div> <!-- Same as `content-page` -->
+
+			<div class="step" data-z="3840">
 				<div id="popu"></div>
 				<script>
 					d3.csv('data/gapminderDataFiveYear.csv').then(function (data) {
@@ -60,7 +57,7 @@
 						// first by year, then by continent:
 						let lookup = {};
 						function getData(year, continent) {
-							var byYear, trace;
+							let byYear, trace;
 							if (!(byYear = lookup[year])) {
 								byYear = lookup[year] = {};
 							}
@@ -80,8 +77,7 @@
 
 						// Go through each row, get the right trace, and append the data:
 						for (const datum of data) {
-							// let datum = data[i];
-							var trace = getData(datum.year, datum.continent);
+							const trace = getData(datum.year, datum.continent); // What you get is NOT a copy of `data` but a ref of it
 							trace.text.push(datum.country);
 							trace.id.push(datum.country);
 							trace.x.push(datum.lifeExp);
@@ -143,15 +139,20 @@
 						}));
 						
 						const layout = {
+							width: 1920/1.414,
+							height: 1080/1.2,
+							title: {
+								text: `世界主要经济体数据`
+							},
 							xaxis: {
 								title: {
-									text: 'Life Expectancy'
+									text: `预期寿命（Life Expectancy）/岁`
 								},
 								range: [30, 85]
 							},
 							yaxis: {
 								title: {
-									text: 'GDP per Capita'
+									text: `人均GDP（GDP per Capita）/$`
 								},
 								type: 'log'
 							},
@@ -176,21 +177,21 @@
 									{
 										method: 'animate',
 										args: [null, {
-										mode: 'immediate',
-										fromcurrent: true,
-										transition: {duration: 300},
-										frame: {duration: 500, redraw: false}
+											mode: 'immediate',
+											fromcurrent: true,
+											transition: {duration: 750},
+											frame: {duration: 750, redraw: false}
 										}],
-										label: 'Play'
+										label: `播放▶️`
 									},
 									{
 										method: 'animate',
 										args: [[null], {
-										mode: 'immediate',
-										transition: {duration: 0},
-										frame: {duration: 0, redraw: false}
+											mode: 'immediate',
+											transition: {duration: 0},
+											frame: {duration: 0, redraw: false}
 										}],
-										label: 'Pause'
+										label: `暂停⏸️`
 									}
 								]
 							}],
@@ -200,7 +201,7 @@
 								pad: {l: 130, t: 55},
 								currentvalue: {
 									visible: true,
-									prefix: 'Year:',
+									prefix: `年份：`,
 									xanchor: 'right',
 									font: {size: 20, color: '#666'}
 								},
@@ -209,7 +210,7 @@
 						};
 						
 						// Create the plot:
-						Plotly.newPlot('popu', {
+						Plotly.newPlot(`popu`, {
 							data: traces,
 							layout: layout,
 							// config: {showSendToCloud:true},
@@ -222,9 +223,39 @@
 				</script>
 			</div>
 
-			<div class="step slide" data-rel-z="-1920" data-rel-rotate-z="90">
-				<p>Test and(&) test.</p>
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo="content-it1"></div> <!-- Same as `content-page` -->
+
+			<div class="step" data-x="3840" data-y="0" data-z="0" style="width: max-content;">
+				<h1>第一篇章：改革号角</h1>
+				<ul>
+					<li><b>核心：</b></li>
+				</ul>
 			</div>
+
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo="content-it2"></div> <!-- Same as `content-page` -->
+
+			<div class="step" data-x="5760" data-y="0" data-z="0" style="width: max-content;">
+				<h1>第二篇章：改革洪流</h1>
+				<ul>
+					<li><b>核心：</b>比较优势战略</li>
+					<li>改革序幕：微观突破</li>
+				</ul>
+			</div>
+
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo="content-it3"></div> <!-- Same as `content-page` -->
+
+			<div class="step" data-x="7680" data-y="0" data-z="0" style="width: max-content;">
+				<h1>第三篇章：辉煌成就</h1>
+				<ul>
+					<li></li>
+				</ul>
+			</div>
+
+			<div class="step" data-x="9600" data-y="0" data-z="0">
+				<h1>感谢观看！</h1>
+				<p>第三小组全体成员</p>
+			</div>
+
 		</div>
 
 		<script src="../js/impress.js"></script>
@@ -232,5 +263,6 @@
 			// window.impress || document.write('<script src="https://cdn.jsdelivr.net/gh/impress/impress.js@2.0.0/js/impress.js">\x3C/script>');
 			impress().init();
 		</script>
+		<script src="../js/utility.js"></script>
 	</body>
 </html>
