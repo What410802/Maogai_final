@@ -18,6 +18,7 @@
 	font-size: larger;
 	text-decoration: underline;
 }
-div.step {
+div.step, .my-max-hw {
 	width: max-content;
+	height: max-content;
 }

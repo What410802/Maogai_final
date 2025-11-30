@@ -39,7 +39,7 @@
 				</figure>
 			</div>
 
-			<div id="content-page" class="step" data-x="1920" data-y="0" data-z="0" style="width: max-content;">
+			<div id="content-page" class="step" data-x="1920" data-y="0" data-z="0">
 				<h1>主要内容</h1>
 				<ol start="0">
 					<li id="content-it0">总述</li>
@@ -48,7 +48,7 @@
 					<li id="content-it3">辉煌成就</li>
 				</ol>
 			</div>
-			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" data-transition-duration="0" mygo="content-it0"></div> <!-- Same as `content-page` -->
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" data-transition-duration="0" mygo2="content-it0"></div> <!-- Same as `content-page` -->
 
 			<div class="step" data-z="3840">
 				<div id="popu"></div>
@@ -225,9 +225,9 @@
 				</script>
 			</div>
 
-			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo="content-it1"></div> <!-- Same as `content-page` -->
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it1"></div> <!-- Same as `content-page` -->
 
-			<div class="step" data-x="3840" data-y="0" data-z="0" style="width: max-content;">
+			<div class="step" data-x="3840" data-y="0" data-z="0">
 				<h1>第一篇章：改革号角</h1>
 				<ul>
 					<li><b>核心：</b></li>
@@ -296,9 +296,20 @@
 				</div>
 			</div>
 
-			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo="content-it2"></div> <!-- Same as `content-page` -->
+			<div class="step" data-rel-z="4200" data-rotate="90" style="
+				width: 1920px; height: 1080px;
+				background: radial-gradient(rgb(255, 220, 197), transparent);
+				display: flex; align-items: center; justify-content: center;
+			"> <!--First time of determining z bias!-->
+				<p>
+					改革的号角<br>
+					<b class="shake shake-constant shake-slow" style="color: firebrick; ">已然吹响！——</b>
+				</p>
+			</div>
 
-			<div class="step" data-x="5760" data-y="0" data-z="0" style="width: max-content;">
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it2"></div> <!-- Same as `content-page` -->
+
+			<div class="step" data-x="5760" data-y="0" data-z="0">
 				<h1>第二篇章：改革洪流</h1>
 				<ul>
 					<li><b>核心：</b>比较优势战略</li>
@@ -306,9 +317,22 @@
 				</ul>
 			</div>
 
-			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo="content-it3"></div> <!-- Same as `content-page` -->
+			<div class="step" data-rel-y="1080" style="
+				width: 1920px; height: 1080px;
+				display: flex; align-items: center; justify-content: center;
+			">
+				<div>
+					<h2>Example 2:</h2>
+					<figure>
+						<object data="draw.io/embed_HTML/example-2.html" width="885" height="470"></object> <!--Got by inspecting in the browser-->
+						<figcaption style="text-align: center;">图n draw.io 图像</figcaption>
+					</figure>
+				</div>
+			</div>
 
-			<div class="step" data-x="7680" data-y="0" data-z="0" style="width: max-content;">
+			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it3"></div> <!-- Same as `content-page` -->
+
+			<div class="step" data-x="7680" data-y="0" data-z="0">
 				<h1>第三篇章：辉煌成就</h1>
 				<ul>
 					<li></li>
@@ -317,6 +341,7 @@
 
 			<div class="step" data-rel-y="1080">
 				<div>
+					<h2>……二级标题的大小</h2>
 					<div id="example-3"></div>
 					<script>
 						function example_3(){
@@ -359,9 +384,10 @@
 								}
 							];
 
+							const height = 750;
 							const layout = {
-								width: 600,
-								height: 600,
+								width: height,
+								height: height,
 								title: {
 									text: 'Votes cast for ten lowest voting age population in OECD countries',
 								},
@@ -407,10 +433,18 @@
 				</div>
 			</div>
 
-			<div class="step" data-x="9600" data-y="0" data-z="0">
-				<h1>感谢观看！</h1>
-				<p>第三小组全体成员</p>
+			<div class="step" data-x="9600" data-y="0" data-z="0" style="
+				width: 1920px; height: 1080px;
+				background: radial-gradient(rgb(255, 220, 197), white);
+				display: flex; align-items: center; justify-content: center;
+			">
+				<div>
+					<h1>感谢观看！</h1>
+					<p>第三小组全体成员</p>
+				</div>
 			</div>
+
+			<div class="step" id="myfinal" data-x="3840" data-y="3240" data-scale="10" style="pointer-events: none;"></div>
 
 		</div>
 
