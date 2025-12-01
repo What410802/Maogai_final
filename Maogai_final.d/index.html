@@ -10,6 +10,11 @@
 		<link rel="stylesheet" href="../css/utility.css"/>
 		<script src="../libs/d3.v7/d3.v7.js"></script>
 		<script src="../libs/plotly.js-3.3.0/plotly.js"></script>
+		<style>
+			figcaption {
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body class="strict-impress-parent impress-not-supported" style="font-family: 'Noto Serif CJK SC'; ">
 		<div class="its-impress-son">
@@ -232,6 +237,53 @@
 				<ul>
 					<li><b>核心：</b></li>
 				</ul>
+			</div>
+
+			<div class="step" data-rel-y="1080">
+				<div style="display: flex; align-items: center; justify-content: center;">
+					<figure>
+						<div id="map-1"></div>
+						<figcaption>图1 美国某地区……</figcaption>
+					</figure>
+					<script>
+						function map_1(){
+							const data = [{
+								type: "choroplethmap", 
+								geojson: 'data/us-states.json',
+								locations: ["NY", "MA", "VT", 'ME', 'OH'], z: [-50, -10, -20, 50, 0],
+							}];
+							const height = 1080/2.5;
+							const layout = {
+								map: {center: {lon: -74, lat: 43}, zoom: 3.8},
+								height: height,
+								width: height*1.618
+							};
+							return ['map-1', data, layout];
+						}
+						Plotly.newPlot(...map_1());
+					</script>
+					<figure>
+						<div id="map-2"></div>
+						<figcaption>图2 全球某地区……</figcaption>
+					</figure>
+					<script>
+						function map_2(){
+							const data = [{
+								type: "choroplethmap", 
+								geojson: 'data/world-countries.json',
+								locations: ["CHN", "TWN", "VNM", 'USA', 'GBR'], z: [50, 50, -20, 50, 0],
+							}];
+							const height = 1080/1.6;
+							const layout = {
+								map: {center: {lon: -74, lat: 43}, zoom: .2},
+								height: height,
+								width: height*1.618,
+							};
+							return ['map-2', data, layout];
+						}
+						Plotly.newPlot(...map_2());
+					</script>
+				</div>
 			</div>
 
 			<div class="step" data-rel-y="1080">
