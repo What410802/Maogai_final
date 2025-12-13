@@ -230,62 +230,53 @@
 				</script>
 			</div>
 
+			<div class="step" data-rel-y="1080" data-z="0">
+				<h2>书中四问</h2>
+				<ol>
+					<li>为什么在改革以前中国经济发展缓慢，而改革之后得到迅速发展。</li>
+					<li>为什么中国改革的某些方面进展迟缓，甚至在过程中会出现上节中所概述的一系列问题。</li>
+					<li>中国的改革和发展势头能否得以持续。</li>
+					<li>为什么中国的改革取得了巨大的成功，而前苏联和东欧国家的改革却步履维艰。</li>
+				</ol>
+				<h2>历程总述</h2>
+				“赶超战略”如何导致扭曲的经济体制 → 改革如何通过“比较优势战略”解放生产力 → 成就与挑战
+			</div>
+
 			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it1"></div> <!-- Same as `content-page` -->
 
 			<div class="step" data-x="3840" data-y="0" data-z="0">
 				<h1>第一篇章：改革号角</h1>
-				<ul>
-					<li><b>核心：</b></li>
+				<h2>核心组成——</h2>
+				<ol>
+					<li><b>赶超战略</b>的形成与发展</li>
+					<li><b>“三位一体”体制</b>的确立</li>
+					<li><b>传统体制</b>的效果</li>
 				</ul>
 			</div>
 
 			<div class="step" data-rel-y="1080">
-				<div style="display: flex; align-items: center; justify-content: center;">
-					<figure>
-						<div id="map-1"></div>
-						<figcaption>图1 美国某地区……</figcaption>
-					</figure>
-					<script>
-						function map_1(){
-							const data = [{
-								type: "choroplethmap", 
-								geojson: 'data/us-states.json',
-								locations: ["NY", "MA", "VT", 'ME', 'OH'], z: [-50, -10, -20, 50, 0],
-							}];
-							const height = 1080/2.5;
-							const layout = {
-								map: {center: {lon: -74, lat: 43}, zoom: 3.8},
-								height: height,
-								width: height*1.618
-							};
-							return ['map-1', data, layout];
-						}
-						Plotly.newPlot(...map_1());
-					</script>
-					<figure>
-						<div id="map-2"></div>
-						<figcaption>图2 全球某地区……</figcaption>
-					</figure>
-					<script>
-						function map_2(){
-							const data = [{
-								type: "choroplethmap", 
-								geojson: 'data/world-countries.json',
-								locations: ["CHN", "TWN", "VNM", 'USA', 'GBR'], z: [50, 50, -20, 50, 0],
-							}];
-							const height = 1080/1.6;
-							const layout = {
-								map: {center: {lon: -74, lat: 43}, zoom: .2},
-								height: height,
-								width: height*1.618,
-							};
-							return ['map-2', data, layout];
-						}
-						Plotly.newPlot(...map_2());
-					</script>
-				</div>
+				<h2>1. 赶超战略</h2>
+				<h3>核心论点</h3>
+				建国初期，为快速实现强国目标，选择了<b>不符合</b>当时资源比较优势（资本稀缺、劳动力丰富）的<b>“重工业优先发展战略”</b>。
+
+				<div id="ganchao-1"></div>
+				<script>
+					/*TODO: 对比中国当时的资源禀赋（资本、劳动力）与重工业的特征（资本密集）*/
+				</script>
 			</div>
 
+			<div class="step" data-rel-y="1080">
+				<h2>2. “三位一体”体制</h2>
+				<h3>核心论点</h3>
+				为扶持没有自生能力的重工业，内生出扭曲的宏观政策环境、高度集中的资源计划配置制度和缺乏自主权的微观经营机制。
+				<!-- TODO: “战略-宏观-资源-微观”四位 -->
+			</div>
+
+			<div class="step" data-rel-y="1080">
+				<h2>3. 传统体制效果</h2>
+				<h3>核心论点</h3>
+				扭曲的体制虽在初期动员了资源，但长期导致产业结构失衡、经济效率低下、人民生活改善缓慢。
+			</div>
 			<div class="step" data-rel-y="1080">
 				<div>
 					<h2>例：农、轻、重比例失调</h2>
@@ -348,6 +339,53 @@
 				</div>
 			</div>
 
+			<!--<div class="step" data-rel-y="1080">
+				<div style="display: flex; align-items: center; justify-content: center;">
+					<figure>
+						<div id="map-1"></div>
+						<figcaption>图1 美国某地区……</figcaption>
+					</figure>
+					<script>
+						function map_1(){
+							const data = [{
+								type: "choroplethmap", 
+								geojson: 'data/us-states.json',
+								locations: ["NY", "MA", "VT", 'ME', 'OH'], z: [-50, -10, -20, 50, 0],
+							}];
+							const height = 1080/2.5;
+							const layout = {
+								map: {center: {lon: -74, lat: 43}, zoom: 3.8},
+								height: height,
+								width: height*1.618
+							};
+							return ['map-1', data, layout];
+						}
+						Plotly.newPlot(...map_1());
+					</script>
+					<figure>
+						<div id="map-2"></div>
+						<figcaption>图2 全球某地区……</figcaption>
+					</figure>
+					<script>
+						function map_2(){
+							const data = [{
+								type: "choroplethmap", 
+								geojson: 'data/world-countries.json',
+								locations: ["CHN", "TWN", "VNM", 'USA', 'GBR'], z: [50, 50, -20, 50, 0],
+							}];
+							const height = 1080/1.6;
+							const layout = {
+								map: {center: {lon: -74, lat: 43}, zoom: .2},
+								height: height,
+								width: height*1.618,
+							};
+							return ['map-2', data, layout];
+						}
+						Plotly.newPlot(...map_2());
+					</script>
+				</div>
+			</div>-->
+
 			<div class="step" data-rel-z="4200" data-rotate="90" style="
 				width: 1920px; height: 1080px;
 				background: radial-gradient(rgb(255, 220, 197), transparent);
@@ -364,22 +402,14 @@
 			<div class="step" data-x="5760" data-y="0" data-z="0">
 				<h1>第二篇章：改革洪流</h1>
 				<ul>
-					<li><b>核心：</b>比较优势战略</li>
-					<li>改革序幕：微观突破</li>
+					<li><b>核心：比较优势战略</b></li>
+					<li>改革序幕：经营机制微观突破</li>
+					<li>增量改革：非国有经济在崛起</li>
+					<li>资源配置制度改革：价格双轨</li>
+					<li>宏观政策环境改革：艰难闯关</li>
+					<li>对外开放：融入全球市场，再展比较优势</li>
+					<li>小结</li>
 				</ul>
-			</div>
-
-			<div class="step" data-rel-y="1080" style="
-				width: 1920px; height: 1080px;
-				display: flex; align-items: center; justify-content: center;
-			">
-				<div>
-					<h2>Example 2:</h2>
-					<figure>
-						<object data="draw.io/embed_HTML/example-2.html" width="885" height="470"></object> <!--Got by inspecting in the browser-->
-						<figcaption style="text-align: center;">图n draw.io 图像</figcaption>
-					</figure>
-				</div>
 			</div>
 
 			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it3"></div> <!-- Same as `content-page` -->
@@ -387,7 +417,7 @@
 			<div class="step" data-x="7680" data-y="0" data-z="0">
 				<h1>第三篇章：辉煌成就</h1>
 				<ul>
-					<li></li>
+					<li>关注重点：经济增长、经济结构优化。</li>
 				</ul>
 			</div>
 
@@ -483,6 +513,35 @@
 						Plotly.newPlot(...example_3());
 					</script>
 				</div>
+			</div>
+
+			<div class="step" data-rel-y="1080" style="
+				width: 1920px; height: 1080px;
+				display: flex; align-items: center; justify-content: center;
+			">
+				<div>
+					<h2>思路总结</h2>
+					<figure>
+						<object data="draw.io/embed_HTML/example-2.html" width="885" height="470"></object> <!--Got by inspecting in the browser-->
+						<figcaption style="text-align: center;">图n draw.io 图像</figcaption>
+					</figure>
+				</div>
+			</div>
+
+			<div class="step" data-rel-y="1080">
+				<h1>成功之后……</h1>
+			</div>
+			<div class="step" data-rel-y="1080">
+				<h2>问题与挑战</h2>
+				<ul>
+					<li>“活-乱”循环（通胀与紧缩的周期性波动）</li>
+					<li>国企改革难题、金融体系风险</li>
+					<li>城乡与区域收入差距扩大</li>
+					<li>腐败与寻租问题……</li>
+				</ul>
+			</div>
+			<div class="step" data-rel-y="1080">
+				<!-- TODO: 详述 -->
 			</div>
 
 			<div class="step" data-x="9600" data-y="0" data-z="0" style="
