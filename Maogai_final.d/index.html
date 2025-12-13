@@ -20,7 +20,7 @@
 		<div class="its-impress-son">
 			<p>This browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
 		</div>
-		<div id="impress" data-width="1920" data-height="1080" data-transition-duration="750" style="font-size: xx-large;">
+		<div id="impress" data-width="1920" data-height="1080" style="font-size: xx-large;"><!-- data-transition-duration="750" -->
 
 			<div class="step beg-step" data-x="0" data-y="0" style="
 				width: 1920px; height: 1080px;
@@ -55,7 +55,7 @@
 			</div>
 			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" data-transition-duration="0" mygo2="content-it0"></div> <!-- Same as `content-page` -->
 
-			<div class="step" data-z="3840">
+			<div class="step" data-z="19200">
 				<div id="popu"></div>
 				<script>
 					d3.csv('data/gapminderDataFiveYear.csv').then(function (data) {
@@ -148,6 +148,9 @@
 						const layout = {
 							width: height*1.618,
 							height: height,
+							font: {
+								size: 20,
+							},
 							title: {
 								text: `世界主要经济体数据`
 							},
@@ -155,13 +158,14 @@
 								title: {
 									text: `预期寿命（Life Expectancy）/岁`
 								},
-								range: [30, 85]
+								range: [25, 85]
 							},
 							yaxis: {
 								title: {
 									text: `人均GDP（GDP per Capita）/$`
 								},
-								type: 'log'
+								type: 'log',
+								range: [2+Math.log10(1.5), 5]
 							},
 							hovermode: 'closest',
 							// We'll use updatemenus (whose functionality includes menus as
@@ -231,38 +235,58 @@
 			</div>
 
 			<div class="step" data-rel-y="1080" data-z="0">
-				<h2>书中四问</h2>
+				<h2>书中四问｜</h2>
 				<ol>
-					<li>为什么在改革以前中国经济发展缓慢，而改革之后得到迅速发展。</li>
-					<li>为什么中国改革的某些方面进展迟缓，甚至在过程中会出现上节中所概述的一系列问题。</li>
-					<li>中国的改革和发展势头能否得以持续。</li>
-					<li>为什么中国的改革取得了巨大的成功，而前苏联和东欧国家的改革却步履维艰。</li>
+					<li>为什么在改革以前中国经济发展缓慢，而改革之后得到迅速发展？</li>
+					<li>为什么中国改革的某些方面进展迟缓，甚至在过程中会出现上节中所概述的一系列问题？</li>
+					<li>中国的改革和发展势头能否得以持续？</li>
+					<li>为什么中国的改革取得了巨大的成功，而前苏联和东欧国家的改革却步履维艰？</li>
 				</ol>
-				<h2>历程总述</h2>
+				<h2>历程总述｜</h2>
 				“赶超战略”如何导致扭曲的经济体制 → 改革如何通过“比较优势战略”解放生产力 → 成就与挑战
 			</div>
 
 			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it1"></div> <!-- Same as `content-page` -->
 
-			<div class="step" data-x="3840" data-y="0" data-z="0">
-				<h1>第一篇章：改革号角</h1>
-				<h2>核心组成——</h2>
-				<ol>
-					<li><b>赶超战略</b>的形成与发展</li>
-					<li><b>“三位一体”体制</b>的确立</li>
-					<li><b>传统体制</b>的效果</li>
-				</ul>
+			<div class="step" data-x="3840" data-y="0" data-z="0" style="
+				width: 1920px; height: 1080px;
+				background: radial-gradient(rgb(255, 220, 197), white);
+				display: flex; align-items: center; justify-content: center;
+			">
+				<div>
+					<h1>第一篇章：改革号角</h1>
+					<ol>
+						<li><b>赶超战略</b>的形成与发展</li>
+						<li><b>“三位一体”</b>体制的确立</li>
+						<li><b>传统体制</b>的效果</li>
+					</ul>
+				</div>
 			</div>
 
 			<div class="step" data-rel-y="1080">
 				<h2>1. 赶超战略</h2>
-				<h3>核心论点</h3>
+				<!-- <h3>核心论点</h3>
 				建国初期，为快速实现强国目标，选择了<b>不符合</b>当时资源比较优势（资本稀缺、劳动力丰富）的<b>“重工业优先发展战略”</b>。
+				<br>
+				当时主要基于三方面考量：
+				<ul>
+					<li>从国际竞争维度看，重工业比重是衡量工业化水平与国家实力的关键指标，契合当时 “赶超” 发达国家的迫切需求；</li>
+					<li>从国际政治环境而言，朝鲜战争爆发及西方的封锁制裁，迫使中国必须快速建立完备工业体系以保障国防安全；</li>
+					<li>从工业化积累方式来看，当时认为在农业人口占绝对主体的二元经济中，轻工业发展受限于农村市场狭小与有效需求不足，
+						<br>
+						而重工业具有自我服务、自我循环的产业特征，可突破这一约束，实现超阶段工业化。</li>
+				</ul>
+				这一战略选择与苏联 20 世纪 20 年代的工业化路径具有相似性，均以重工业为核心构建工业体系。然而结果却不尽如人意。 -->
 
-				<div id="ganchao-1"></div>
-				<script>
-					/*TODO: 对比中国当时的资源禀赋（资本、劳动力）与重工业的特征（资本密集）*/
-				</script>
+				<figure>
+					<img src="draw.io/embed/Chapter1-Conflict.drawio.svg" style="
+						/* border: solid; */
+						display: block;
+						justify-self: center;
+						scale: 80%;
+					"/>
+					<figcaption>图n&#x3000;赶超战略形成过程</figcaption>
+				</figure>
 			</div>
 
 			<div class="step" data-rel-y="1080">
@@ -399,7 +423,11 @@
 
 			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it2"></div> <!-- Same as `content-page` -->
 
-			<div class="step" data-x="5760" data-y="0" data-z="0">
+			<div class="step" data-x="5760" data-y="0" data-z="0" style="
+				width: 1920px; height: 1080px;
+				background: radial-gradient(rgb(255, 220, 197), white);
+				display: flex; align-items: center; justify-content: center;
+			"><div>
 				<h1>第二篇章：改革洪流</h1>
 				<ul>
 					<li><b>核心：比较优势战略</b></li>
@@ -410,16 +438,20 @@
 					<li>对外开放：融入全球市场，再展比较优势</li>
 					<li>小结</li>
 				</ul>
-			</div>
+			</div></div>
 
 			<div class="step ret-step" data-x="1920" data-y="0" data-z="0" mygo2="content-it3"></div> <!-- Same as `content-page` -->
 
-			<div class="step" data-x="7680" data-y="0" data-z="0">
+			<div class="step" data-x="7680" data-y="0" data-z="0" style="
+				width: 1920px; height: 1080px;
+				background: radial-gradient(rgb(255, 220, 197), white);
+				display: flex; align-items: center; justify-content: center;
+			"><div>
 				<h1>第三篇章：辉煌成就</h1>
 				<ul>
 					<li>关注重点：经济增长、经济结构优化。</li>
 				</ul>
-			</div>
+			</div></div>
 
 			<div class="step" data-rel-y="1080">
 				<div>
@@ -522,7 +554,7 @@
 				<div>
 					<h2>思路总结</h2>
 					<figure>
-						<object data="draw.io/embed_HTML/example-2.html" width="885" height="470"></object> <!--Got by inspecting in the browser-->
+						<object data="draw.io/embed/example-2.html" width="1187" height="667"></object> <!--Got by inspecting in the browser-->
 						<figcaption style="text-align: center;">图n draw.io 图像</figcaption>
 					</figure>
 				</div>

@@ -1,0 +1,79 @@
+<mxfile host="drawio-dev.pages.dev" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0" version="29.2.7">
+  <diagram name="Page-1" id="_jYk4VI_4sk6E2b-iM96">
+    <mxGraphModel dx="1042" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="540" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kaiWOsXcqj2f351oweO4-1" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_globe.svg;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="116" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-2" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Noto Serif CJK SC;fontSize=24;" value="赶超！" vertex="1">
+          <mxGeometry height="30" width="74" x="180" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-4" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/secure.svg;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="50" width="32" x="125" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-5" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Noto Serif CJK SC;fontSize=24;" value="国防！" vertex="1">
+          <mxGeometry height="30" width="74" x="180" y="235" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-6" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/switch.svg;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="50" width="50" x="116" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-7" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Noto Serif CJK SC;fontSize=24;" value="自生！" vertex="1">
+          <mxGeometry height="30" width="74" x="180" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-8" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/meeting.svg;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="45.5" width="50" x="385" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Noto Serif CJK SC;fontSize=24;" value="参考苏联模式" vertex="1">
+          <mxGeometry height="30" width="120" x="350" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-11" edge="1" parent="1" source="kaiWOsXcqj2f351oweO4-2" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Noto Serif CJK SC;fontSize=24;" target="kaiWOsXcqj2f351oweO4-9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="270" as="sourcePoint" />
+            <mxPoint x="510" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-12" edge="1" parent="1" source="kaiWOsXcqj2f351oweO4-5" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Noto Serif CJK SC;fontSize=24;" target="kaiWOsXcqj2f351oweO4-9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="240" y="120" as="sourcePoint" />
+            <mxPoint x="316" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-14" edge="1" parent="1" source="kaiWOsXcqj2f351oweO4-7" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Noto Serif CJK SC;fontSize=24;" target="kaiWOsXcqj2f351oweO4-9" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="430" as="sourcePoint" />
+            <mxPoint x="536" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kaiWOsXcqj2f351oweO4-15" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Noto Serif CJK SC;fontSize=24;labelBorderColor=default;" value="优先发展重工业" vertex="1">
+          <mxGeometry height="30" width="120" x="510" y="225" as="geometry" />
+        </mxCell>
+        <mxCell id="HFyT2ZNmFIe8pz4DJVLz-1" edge="1" parent="1" source="kaiWOsXcqj2f351oweO4-9" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Noto Serif CJK SC;fontSize=24;" target="kaiWOsXcqj2f351oweO4-15" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="460" y="270" as="sourcePoint" />
+            <mxPoint x="510" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HFyT2ZNmFIe8pz4DJVLz-2" parent="1" style="sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database;fillColor=#2072B8;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="49" width="35" x="527.5" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="HFyT2ZNmFIe8pz4DJVLz-6" parent="1" style="sketch=0;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.databases.database_mini_2;fillColor=#2072B8;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="42" width="35" x="577.5" y="297" as="geometry" />
+        </mxCell>
+        <mxCell id="HFyT2ZNmFIe8pz4DJVLz-7" edge="1" parent="1" source="kaiWOsXcqj2f351oweO4-15" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Noto Serif CJK SC;fontSize=24;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="630" y="239.5" as="sourcePoint" />
+            <mxPoint x="670" y="239.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HFyT2ZNmFIe8pz4DJVLz-8" parent="1" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.firewall;fillColor=#DA4026;fontFamily=Noto Serif CJK SC;fontSize=24;" value="" vertex="1">
+          <mxGeometry height="43" width="47" x="820" y="218.5" as="geometry" />
+        </mxCell>
+        <mxCell id="HFyT2ZNmFIe8pz4DJVLz-9" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontFamily=Noto Serif CJK SC;fontSize=24;" value="结果……" vertex="1">
+          <mxGeometry height="30" width="150" x="670" y="225" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
