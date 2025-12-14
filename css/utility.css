@@ -17,7 +17,8 @@
 	/* background-color: #A09BC3; */
 	color: #D48E7E;
 	font-size: larger;
-	text-decoration: underline;
+	font-weight: bold;
+	/* text-decoration: underline; */
 }
 div.step, .my-max-hw {
 	width: max-content;
