@@ -1,0 +1,12 @@
+# Blender 5.0.0 MTL File: 'Coin.blend'
+# www.blender.org
+
+newmtl CoinMaterial
+Ns 302.500000
+Ka 0.955178 0.955178 0.955178
+Kd 1.000000 0.476991 0.000000
+Ks 0.600000 0.600000 0.600000
+Ke 0.000000 0.000000 0.000000
+Ni 3.000000
+d 1.000000
+illum 3
