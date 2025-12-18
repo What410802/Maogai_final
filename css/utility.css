@@ -6,11 +6,15 @@
 }
 @font-face {
 	font-family: 'Noto Serif CJK SC';
-	/* src: url('../fonts/NotoSerifCJKsc-VF.woff2') format('woff2-variations'); */
 	src: url('../fonts/NotoSerifCJKsc-VF.otf');
 	font-weight: 100 900;
 	/* font-style: normal; */
 }
+/* @font-face {
+	font-family: 'Noto Sans CJK SC';
+	src: url('../fonts/NotoSansCJKsc-VF.otf');
+	font-weight: 100 900;
+} */
 
 #content-page ol li.toc-active {
 	/* border: 3px solid ; */
